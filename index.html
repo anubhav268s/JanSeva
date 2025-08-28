@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Medical Report</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+
+<body>
+    <div class="page" id="page">
+        <header style="margin-bottom: 8px;">
+            <div class="doctor-logo-container">
+                <img src="295067.svg" alt="Doctor's Logo" class="doctor-logo" />
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 320px;">
+                    <h1
+                        style="font-size: 32px; color: #0d1b3d; margin-bottom: 0; margin-top: 0; font-weight: 900; letter-spacing: 1px; padding-top: 20px;">
+                        जनसेवा हॉस्पिटल एवं क्षार सूत्र सेंटर
+                    </h1>
+                    <div style="font-size: 13px; color: #0d1b3d; margin-bottom: 8px; font-weight: 600;">
+                        सरकारी हॉस्पिटल के पीछे, कुबेरनाथ, कुशीनगर
+                    </div>
+                    <div style="font-size: 25px; color: #1c4dff; font-weight: bold;">डॉ. अनुराग शर्मा</div>
+                    <div style="font-size: 13px; color: #333; margin-bottom: 4px;">
+                        BAMS, PGDCH (IMS BHU - काशी हिन्दू विश्वविद्यालय )<br>
+                        Physician & Anorectal Surgeon<br>
+                        भूतपूर्व चिकित्सा अधिकारी: जिला चिकित्सालय चंदौली<br>
+                        भूतपूर्व चिकित्सा अधिकारी: पंडित दीनदयाल हॉस्पिटल, वाराणसी
+                    </div>
+                </div>
+                <div style="text-align: right; min-width: 220px;">
+                    <div style="font-size: 32px; color: #1c4dff; padding-top: 10px">
+                        Sharma Medical Store
+                    </div>
+                    <div style="font-size: 13px; color: #0d1b3d; margin-bottom: 8px; font-weight: 600;">
+                        बीएसएनएल टावर के पास, कुबेरनाथ, कुशीनगर
+                    </div>
+                    <div
+                        style=" font-weight: 600; color: #000000; padding: 2px 10px; border-radius: 4px; font-size: 13px; margin-bottom: 4px; display: inline-block;">
+                        Registration No. LKO/68663
+                    </div>
+
+                    <div
+                        style="font-size: 10px; text-align: center; color: #0d1b3d; max-width: 320px; line-height: 1.4;">
+                        बीपी, शुगर, दमा, सांस फूलना, बुखार, पीलिया, जोड़ों में दर्द, कमर दर्द, मल के द्वार से खून आना,
+                        मल त्यागने मे कठिनाई, मल के द्वार पर गांठ, बवासीर, भगन्दर, फिस्टुला आदि का इलाज एवं ऑपरेशन क्षार
+                        सूत्र विधि द्वारा किया जाता है।
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- ...existing code... -->
+
+        <!-- ...Patient Section... -->
+        <div class="patient-details-header">
+            <h2 class="section-title" style="margin: 8px 0;">Patient Details</h2>
+            <div class="date-field">
+                <label for="date" style="margin-right: 6px;">Date</label>
+                <input id="date" type="date" />
+            </div>
+        </div>
+        <div class="patient-details-grid">
+            <div>
+                <label for="patientName">Patient Name</label>
+                <input id="patientName" />
+            </div>
+            <div>
+                <label for="age">Age</label>
+                <input id="age" type="number" min="0" />
+            </div>
+            <div>
+                <label for="gender">Gender</label>
+                <select id="gender">
+                    <option value="">Select</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                </select>
+            </div>
+            <div>
+                <label for="mobile">Mobile</label>
+                <input id="mobile" />
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input id="email" />
+            </div>
+            <div>
+                <label for="address">Address</label>
+                <input id="address" />
+            </div>
+            <div>
+                <label for="bp">BP</label>
+                <div class="inline-field">
+                    <input id="bp" />
+                    <span>mmHg</span>
+                </div>
+            </div>
+            <div>
+                <label for="pulse">Pulse</label>
+                <div class="inline-field">
+                    <input id="pulse" />
+                    <span>bpm</span>
+                </div>
+            </div>
+            <div>
+                <label for="temp">Temp.</label>
+                <div class="inline-field">
+                    <input id="temp" />
+                    <span>°C</span>
+                </div>
+            </div>
+            <div>
+                <label for="spo2">SpO2</label>
+                <div class="inline-field">
+                    <input id="spo2" />
+                    <span>%</span>
+                </div>
+            </div>
+            <div>
+                <label for="height">Height</label>
+                <div class="inline-field">
+                    <input id="height" />
+                    <span>cm</span>
+                </div>
+            </div>
+            <div>
+                <label for="weight">Weight</label>
+                <div class="inline-field">
+                    <input id="weight" />
+                    <span>kg</span>
+                </div>
+            </div>
+            <div>
+                <label for="rbs">RBS</label>
+                <div class="inline-field">
+                    <input id="rbs" />
+                    <span>mg/dL</span>
+                </div>
+            </div>
+        </div>
+        <!-- ...existing code... -->
+
+        <!-- Remove the old static BP/Pulse/Temp... div below -->
+
+
+        <!-- Section 1 -->
+        <h2 class="section-title" id="servicesTitle">Services
+            <button class="delete-section no-print" onclick="deleteServiceSection()"
+                title="Delete all services">Delete</button>
+        </h2>
+        <div class="btn-row no-print"><button onclick="addServiceRow()">+ Add Service</button></div>
+        <table id="servicesTable">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Description</th>
+                    <th class="center">Unit</th>
+                    <th class="center">Quantity</th>
+                    <th class="right">Price /Unit</th>
+                    <th class="right">Amount</th>
+                    <th class="no-print">Action</th>
+                </tr>
+            </thead>
+            <tbody id="servicesBody"></tbody>
+        </table>
+        <div class="totals">
+            <div class="box">
+                <div class="row">
+                    <div>Sub Total</div>
+                    <div>₹ <span id="srvSubtotal">0.00</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2 -->
+        <h2 class="section-title" id="medicinesTitle">Medical Bill
+            <button class="delete-section no-print" onclick="deleteMedicineSection()"
+                title="Delete all medicines">Delete</button>
+        </h2>
+        <div class="btn-row no-print"><button onclick="addMedicineRow()">+ Add Medicine</button></div>
+        <table id="medsTable">
+            <thead>
+                <tr>
+                    <th>Sr. No.</th>
+                    <th>Medicine Name</th>
+                    <th class="center">Unit</th>
+                    <th class="no-print">Total Price</th>
+                    <th class="no-print">Total Units</th>
+                    <th class="center">Quantity</th>
+                    <th class="right">Price /Unit</th>
+                    <th class="right">Amount</th>
+                    <th class="no-print">Action</th>
+                </tr>
+            </thead>
+            <tbody id="medsBody"></tbody>
+        </table>
+        <div class="totals">
+            <div class="box">
+                <div class="row">
+                    <div>Sub Total</div>
+                    <div>₹ <span id="medSubtotal">0.00</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total -->
+        <div class="totals">
+            <div class="box" style="border-style:solid">
+                <div class="row" style="font-weight:800">
+                    <div>Total Payable</div>
+                    <div>₹ <span id="grandTotal">0.00</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Toolbar -->
+        <div class="toolbar no-print">
+            <div class="btn-row">
+                <button class="ghost" onclick="resetForm()">Cancel / Clear</button>
+                <button onclick="window.print()">Print</button>
+                <button class="primary" onclick="window.print()">Save as PDF</button>
+                <!-- <button class="primary" onclick="saveAsJSON()">Save in DB</button> -->
+                <button class="primary" onclick="saveAsExcel()">Export to Excel</button>
+            </div>
+            <!-- <div class="note">“Save in DB” saves JSON files directly into a chosen folder using File System Access API
+                (works in Chrome/Edge/Brave).</div> -->
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

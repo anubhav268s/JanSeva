@@ -1,0 +1,818 @@
+:root {
+    --ink: #0d1b3d;
+    --muted: #5b6b8a;
+    --accent: #1c4dff;
+    --line: #e5e9f2;
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    color: #111;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, "Noto Sans";
+}
+
+.page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    padding: 10mm 10mm 10mm;
+    position: relative;
+    background: #fff;
+}
+
+header {
+    border-bottom: 2px solid var(--line);
+    padding-bottom: 8mm;
+    margin-bottom: 8mm;
+    position: relative;
+    background: none;
+    z-index: 1;
+    box-shadow: 0 2px 8px 0 rgba(44, 64, 140, 0.04);
+}
+
+.template-header {
+    width: 100%;
+    height: 120mm;
+    /* background: url('template.jpg') no-repeat center top/contain; */
+    opacity: .20;
+    position: absolute;
+    left: 0;
+    top: -10mm;
+    right: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+.grid {
+    display: grid;
+    gap: 10px
+}
+
+.grid.cols-3 {
+    grid-template-columns: repeat(3, 1fr)
+}
+
+label {
+    font-size: 12px;
+    color: #333;
+    margin-bottom: 3px;
+    display: block
+}
+
+input,
+select {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+.section-title {
+    margin: 14px 0 8px;
+    font-weight: 700;
+    color: var(--ink);
+    border-left: 4px solid var(--accent);
+    padding-left: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-top: 6px
+}
+
+thead th {
+    background: #f6f8fb;
+    text-align: left;
+    padding: 6px;
+    border: 1px solid var(--line);
+    font-weight: 600
+}
+
+tbody td {
+    border: 1px solid var(--line);
+    padding: 6px;
+    vertical-align: middle
+}
+
+tfoot td {
+    border: 0;
+    padding: 6px
+}
+
+.right {
+    text-align: right
+}
+
+.center {
+    text-align: center
+}
+
+.btn-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 8px
+}
+
+button {
+    border: 1px solid var(--accent);
+    background: #fff;
+    color: var(--accent);
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+button.primary {
+    background: var(--accent);
+    color: #fff
+}
+
+button.danger {
+    border-color: #e23a3a;
+    color: #e23a3a
+}
+
+button.ghost {
+    border-color: #ccc;
+    color: #222
+}
+
+.totals {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 8px
+}
+
+.totals .box {
+    min-width: 240px;
+    border: 1px dashed var(--line);
+    padding: 10px;
+    border-radius: 8px
+}
+
+.totals .row {
+    display: flex;
+    justify-content: space-between;
+    margin: 4px 0
+}
+
+.toolbar {
+    position: sticky;
+    bottom: 0;
+    background: #fff;
+    border-top: 1px solid var(--line);
+    padding: 10px 0;
+    margin-top: 12px
+}
+
+.note {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 6px
+}
+
+/* .no-print {
+
+} */
+
+@media print {
+
+    .no-print,
+    .toolbar {
+        display: none !important
+    }
+
+    .template-header {
+        opacity: .10
+    }
+
+    input,
+    select {
+        border: 0;
+        border-bottom: 1px solid #aaa;
+        padding: 2px 0
+    }
+
+    .no-print {
+        display: none !important
+    }
+
+    table thead th {
+        background: #eef3ff
+    }
+}
+
+/* ...existing code... */
+.delete-section {
+    border-color: #e23a3a;
+    color: #e23a3a;
+}
+
+.delete-section:hover {
+    color: #f00;
+}
+
+/* ...existing code... */
+
+/* ...existing code... */
+@media print {
+    .hide-print {
+        display: none !important;
+    }
+}
+
+/* ...existing code... */
+
+header>div:not(.template-header) {
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    font-size: 32px;
+    margin: 0 0 8px;
+    color: var(--ink);
+    font-weight: 900;
+    letter-spacing: 1px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* ...existing code... */
+
+header>div:not(.template-header) {
+    position: relative;
+    z-index: 2;
+}
+
+/* ...existing code... */
+.patient-vitals-row {
+    font-size: 13px;
+    color: #0d1b3d;
+    margin-top: 8px;
+    border-top: 2px solid #e5e9f2;
+    padding-top: 6px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+.patient-vitals-row label {
+    margin-bottom: 0;
+    margin-right: 2px;
+    font-size: 13px;
+    color: #0d1b3d;
+    font-weight: 500;
+}
+
+.patient-vitals-row input {
+    width: 60px;
+    min-width: 0;
+    padding: 4px 6px;
+    font-size: 13px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+}
+
+@media print {
+    .patient-vitals-row {
+        border-top: 1px solid #aaa;
+        padding-top: 4px;
+        font-size: 12px;
+    }
+
+    .patient-vitals-row input {
+        border: 0;
+        border-bottom: 1px solid #aaa;
+        padding: 2px 0;
+        font-size: 12px;
+    }
+}
+
+/* Add this to your CSS */
+@media print {
+    .hide-print {
+        display: none !important;
+    }
+}
+
+/* Add to your style.css */
+/* filepath: c:\Users\ANUBHAV\Desktop\JanSeva\style.css */
+.patient-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 24px;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.patient-details-grid label {
+    display: inline-block;
+    min-width: 90px;
+    margin-bottom: 0;
+    font-size: 13px;
+    color: #333;
+    font-weight: 500;
+}
+
+.patient-details-grid input,
+.patient-details-grid select {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    font-size: 13px;
+    margin-left: 0;
+}
+
+.inline-field {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.inline-field input {
+    flex: 1;
+    min-width: 0;
+}
+
+.inline-field span {
+    font-size: 13px;
+    color: #555;
+}
+
+/* Patient Details header row */
+.patient-details-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+    gap: 16px;
+}
+
+.patient-details-header .date-field {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.patient-details-header input[type="date"] {
+    padding: 4px 8px;
+    font-size: 13px;
+    border-radius: 6px;
+    border: 1px solid var(--line);
+}
+
+/* Compact grid for patient details */
+.patient-details-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px 18px;
+    align-items: center;
+    margin-bottom: 8px;
+    max-height: 20vh;
+    overflow: hidden;
+}
+
+.patient-details-grid label {
+    display: inline-block;
+    min-width: 70px;
+    margin-bottom: 0;
+    font-size: 12px;
+    color: #333;
+    font-weight: 500;
+}
+
+.patient-details-grid input,
+.patient-details-grid select {
+    width: 100%;
+    padding: 4px 6px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    font-size: 13px;
+    margin-left: 0;
+}
+
+.inline-field {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.inline-field input {
+    flex: 1;
+    min-width: 0;
+}
+
+.inline-field span {
+    font-size: 12px;
+    color: #555;
+}
+
+/* Reduce space below header */
+header {
+    margin-bottom: 4px !important;
+}
+
+/* Print styles */
+@media print {
+    .patient-details-header {
+        margin-bottom: 2px;
+    }
+
+    .patient-details-grid {
+        margin-bottom: 4px;
+        max-height: 20vh !important;
+    }
+}
+
+/* ...existing code... */
+
+/* Compact header */
+header {
+    padding: 8px 0 4px 0 !important;
+    margin-bottom: 4px !important;
+    font-size: 13px !important;
+    max-width: 100%;
+}
+
+header h1 {
+    font-size: 20px !important;
+    margin-bottom: 2px !important;
+    margin-top: 0 !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.5px !important;
+    padding-top: 10px;
+}
+
+header>div>div,
+header>div {
+    margin-bottom: 2px !important;
+}
+
+header div[style*="font-size: 25px"] {
+    font-size: 15px !important;
+}
+
+header div[style*="font-size: 13px"] {
+    font-size: 11px !important;
+}
+
+header img {
+    width: 90px !important;
+    height: 130px !important;
+    margin-bottom: 2px !important;
+    position: absolute;
+    position-area: center;
+}
+
+header .template-header {
+    min-height: 0 !important;
+}
+
+/* Patient details section */
+.patient-details-header,
+.patient-details-grid {
+    font-size: 12px !important;
+    max-width: 600px;
+    margin-bottom: 6px !important;
+}
+
+.patient-details-header h2 {
+    font-size: 15px !important;
+    margin: 4px 0 !important;
+}
+
+.patient-details-header label,
+.patient-details-grid label {
+    font-size: 11px !important;
+    margin-bottom: 2px !important;
+}
+
+.patient-details-grid input,
+.patient-details-grid select {
+    font-size: 12px !important;
+    padding: 2px 4px !important;
+    margin-bottom: 2px !important;
+    height: 22px !important;
+}
+
+.patient-details-grid .inline-field span {
+    font-size: 11px !important;
+    margin-left: 2px !important;
+}
+
+.patient-details-grid>div {
+    margin-bottom: 4px !important;
+}
+
+/* Reduce spacing for all sections above tables */
+.section-title {
+    font-size: 15px !important;
+    margin: 8px 0 4px 0 !important;
+    padding: 0 !important;
+}
+
+/* Print adjustments */
+@media print {
+
+    header,
+    .patient-details-header,
+    .patient-details-grid {
+        font-size: 11px !important;
+        max-width: 100% !important;
+        margin-bottom: 2px !important;
+    }
+
+    header h1 {
+        font-size: 16px !important;
+        padding-top: 10px;
+    }
+
+    .patient-details-header h2,
+    .section-title {
+        font-size: 13px !important;
+    }
+
+    .patient-details-grid input,
+    .patient-details-grid select {
+        font-size: 11px !important;
+        height: 18px !important;
+    }
+}
+
+/* ...existing code... */
+
+/* Compact patient details: single row, minimal space */
+.patient-details-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+    align-items: flex-end;
+    margin-bottom: 6px !important;
+    max-width: 100%;
+    font-size: 11px !important;
+}
+
+.patient-details-grid>div {
+    flex: 0 1 120px;
+    min-width: 110px;
+    margin-bottom: 0 !important;
+}
+
+.patient-details-grid label {
+    font-size: 10px !important;
+    margin-bottom: 1px !important;
+    font-weight: 500;
+    color: #333;
+}
+
+.patient-details-grid input,
+.patient-details-grid select {
+    font-size: 11px !important;
+    padding: 2px 4px !important;
+    height: 20px !important;
+    margin-bottom: 0 !important;
+    border-radius: 4px;
+}
+
+.inline-field span {
+    font-size: 10px !important;
+    margin-left: 2px !important;
+}
+
+.patient-details-header {
+    font-size: 12px !important;
+    margin-bottom: 2px !important;
+    gap: 8px;
+}
+
+.patient-details-header h2 {
+    font-size: 13px !important;
+    margin: 2px 0 !important;
+}
+
+/* Print adjustments */
+@media print {
+    .patient-details-grid {
+        gap: 4px 6px;
+        font-size: 10px !important;
+        margin-bottom: 2px !important;
+    }
+
+    .patient-details-grid input,
+    .patient-details-grid select {
+        font-size: 10px !important;
+        height: 16px !important;
+    }
+
+    .patient-details-header {
+        font-size: 10px !important;
+        margin-bottom: 1px !important;
+    }
+}
+
+/* ...existing code... */
+
+/* Compact section titles for Section 1 and Section 2 */
+.section-title {
+    font-size: 13px !important;
+    margin: 6px 0 2px 0 !important;
+    padding: 0 !important;
+    font-weight: 700;
+    color: var(--ink);
+    border-left: 0px solid var(--accent);
+    padding-left: 6px;
+    line-height: 1.2;
+}
+
+/* Reduce font size for section action buttons */
+.section-title button,
+.section-title .delete-section {
+    font-size: 11px !important;
+    padding: 2px 8px !important;
+    margin-left: 6px;
+    border-radius: 4px;
+}
+
+/* Print adjustments for section titles */
+@media print {
+    .section-title {
+        font-size: 11px !important;
+        margin: 4px 0 1px 0 !important;
+        padding-left: 4px;
+        border-left-width: 2px;
+    }
+
+    .section-title button,
+    .section-title .delete-section {
+        font-size: 9px !important;
+        padding: 1px 6px !important;
+    }
+}
+
+/* ...existing code... */
+
+/* Compact table styles for services and medical bill */
+#servicesTable,
+#medsTable {
+    font-size: 11px !important;
+    margin-top: 4px !important;
+}
+
+#servicesTable th,
+#servicesTable td,
+#medsTable th,
+#medsTable td {
+    padding: 4px 6px !important;
+    font-size: 11px !important;
+}
+
+#servicesTable th,
+#medsTable th {
+    font-weight: 600 !important;
+}
+
+#servicesTable td,
+#medsTable td {
+    vertical-align: middle !important;
+}
+
+#servicesTable input,
+#servicesTable select,
+#medsTable input,
+#medsTable select {
+    font-size: 11px !important;
+    padding: 2px 4px !important;
+    height: 20px !important;
+    border-radius: 4px !important;
+    margin-bottom: 0 !important;
+}
+
+/* Compact totals box */
+.totals .box {
+    min-width: 180px !important;
+    padding: 6px !important;
+    border-radius: 6px !important;
+    font-size: 11px !important;
+}
+
+.totals .row {
+    margin: 2px 0 !important;
+    font-size: 11px !important;
+}
+
+/* Print adjustments for tables */
+@media print {
+
+    #servicesTable,
+    #medsTable {
+        font-size: 10px !important;
+    }
+
+    #servicesTable th,
+    #servicesTable td,
+    #medsTable th,
+    #medsTable td {
+        padding: 2px 4px !important;
+        font-size: 10px !important;
+    }
+
+    #servicesTable input,
+    #servicesTable select,
+    #medsTable input,
+    #medsTable select {
+        font-size: 10px !important;
+        height: 16px !important;
+    }
+
+    .totals .box {
+        min-width: 120px !important;
+        padding: 4px !important;
+        font-size: 10px !important;
+    }
+
+    .totals .row {
+        font-size: 10px !important;
+    }
+}
+
+/* ...existing code... */
+
+/* Add a horizontal line below patient details and both sections */
+.patient-details-divider,
+.section-divider {
+    border: none;
+    border-bottom: 2px solid var(--line);
+    margin: 6px 0 10px 0;
+    height: 0;
+    width: 100%;
+}
+
+/* For print, make the divider lighter */
+@media print {
+
+    .patient-details-divider,
+    .section-divider {
+        border-bottom: 1px solid #aaa;
+        margin: 4px 0 6px 0;
+    }
+}
+
+/* ...existing code... */
+
+/* Hide all patient details except Name, Age, Gender, Address when printing */
+@media print {
+
+    /* Hide all patient details grid items by default */
+    .patient-details-grid>div {
+        display: none;
+    }
+
+    /* Show only Patient Name, Age, Gender, Address */
+    #patientName,
+    #age,
+    #gender,
+    #address {
+        display: inline-block !important;
+    }
+
+    /* Show their parent divs */
+    #patientName,
+    #age,
+    #gender,
+    #address {
+        /* Select the parent div of each input/select */
+    }
+
+    /* Use :has() if supported, otherwise use nth-child */
+    .patient-details-grid>div:nth-child(1),
+    .patient-details-grid>div:nth-child(2),
+    .patient-details-grid>div:nth-child(3),
+    .patient-details-grid>div:nth-child(6) {
+        display: block !important;
+    }
+}
+
+.doctor-logo {
+    width: 120px;
+    height: auto;
+    opacity: 0.5;
+}
+
+/* ...existing code... */
+/* ...existing code... */
