@@ -816,3 +816,84 @@ header .template-header {
 
 /* ...existing code... */
 /* ...existing code... */
+
+/* ...existing code... */
+
+/* Login Page Styles */
+#login-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.login-container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--ink);
+    margin-bottom: 20px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 5px;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.error-message {
+    color: #e23a3a;
+    font-size: 13px;
+    margin-top: 5px;
+    height: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.error-message.show {
+    opacity: 1;
+}
+
+.hide {
+    display: none !important;
+}
+
+/* Make sure the main UI content is not affected */
+#main-content {
+    /* Styles to ensure it displays correctly when visible */
+}
+
+/* ...existing code... */

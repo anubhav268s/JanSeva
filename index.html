@@ -10,6 +10,24 @@
 </head>
 
 <body>
+    <div id="login-page">
+        <div class="login-container">
+            <h2 class="login-title">Login to Access Report</h2>
+            <div class="login-form">
+                <div class="form-group">
+                    <label for="username">Email</label>
+                    <input type="email" id="username" placeholder="Enter your email" required />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required />
+                </div>
+                <button class="primary" onclick="handleLogin()">Login</button>
+                <p id="error-message" class="error-message"></p>
+            </div>
+        </div>
+    </div>
+    <div id="main-content" class="hide"></div>
     <div class="page" id="page">
         <header style="margin-bottom: 8px;">
             <div class="doctor-logo-container">
@@ -231,6 +249,7 @@
             <!-- <div class="note">“Save in DB” saves JSON files directly into a chosen folder using File System Access API
                 (works in Chrome/Edge/Brave).</div> -->
         </div>
+    </div>
     </div>
     <script src="script.js"></script>
 </body>
